@@ -1,15 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
-<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><fmt:bundle basename="MessagesBundle"><fmt:message key="products"/></fmt:bundle></title>
-</head>
-<body>
-<p><a href="?lng=no_NO">Norsk</a> <a href="?lng=en_US">English (US)</a> <a href="?lng=es_ES">Español</a></p>
+
+<jsp:include page="header.jsp" />
 
 <fmt:bundle basename="MessagesBundle">
 	
@@ -27,10 +20,10 @@
 		</form>
 		</div>
 	</c:forEach>
-	
+	<c:if test="${added != null}"><p style="color:red;" >${added} <fmt:message key="isAdded"/></p>
+		<% session.removeAttribute("added"); %>
+	</c:if>
 	<p><a href="home"><fmt:message key="home"/></a> <a href="cart"><fmt:message key="cart"/></a></p>
 </fmt:bundle>
 
-<t:copyright since="2008">Høgskolen i Bergen</t:copyright>
-</body>
-</html>
+<jsp:include page="footer.jsp" />

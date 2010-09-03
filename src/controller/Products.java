@@ -3,7 +3,6 @@ package controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import util.CurrencyChanger;
 
 import model.Product;
 
@@ -22,17 +23,11 @@ public class Products extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		Locale resLoc = (Locale) request.getAttribute("locale");
-		
 		ProductsDAO prodDAO = new ProductsDAOImpl();
+		Locale resLoc = (Locale) request.getAttribute("locale");
 		ArrayList<Product> products = prodDAO.getProducts(resLoc.toString());
 		
-		ResourceBundle res = ResourceBundle.getBundle("MessagesBundle", resLoc);
-		String rateStr = (String) res.getObject("rate");
-		double rate = Double.parseDouble(rateStr);
-		for(int i=0; i<products.size(); i++) {
-			products.get(i).setPrice(products.get(i).getPrice()*rate);
-		}
+		CurrencyChanger.setPrices(products, resLoc);
 		
 		request.setAttribute("products", products);
 		
@@ -50,6 +45,10 @@ public class Products extends HttpServlet {
         } else {
             cartContent = pNu;
         }
+		
+		ProductsDAO prodDAO = new ProductsDAOImpl();
+		String added = prodDAO.getProduct(Integer.parseInt(pNu), request.getAttribute("locale").toString()).getName();
+		session.setAttribute("added", added);
 		
         session.setAttribute("cartContent", cartContent);
         doGet(request, response);

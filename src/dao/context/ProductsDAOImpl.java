@@ -6,13 +6,13 @@ import dao.ProductsDAO;
 import model.Product;
 
 public class ProductsDAOImpl implements ProductsDAO {
-	private Product whiteCupNo = new Product(1, "White Coffee Cup", 52.00, "whitecup.jpg", "Dette er den ultimate koppen for programutviklere som sitter sene kvelder og trenger litt å holde seg våken på.", "no_NO");
-	private Product whiteCupEn = new Product(1, "White Coffee Cup", 52.00, "whitecup.jpg", "This is the ultimate cup for application developers who sit late nights and need something to stay awake on.", "en_US");
-	private Product whiteCupEs = new Product(1, "White Coffee Cup", 52.00, "whitecup.jpg", "Este es el cáliz definitiva para los desarrolladores de aplicaciones que se sientan horas de la noche y necesitan algo para mantenerse despierto en.", "es_ES");
+	private Product whiteCupNo = new Product(1, "White Coffee Cup", 6.72, "whitecup.jpg", "Dette er den ultimate koppen for programutviklere som sitter sene kvelder og trenger litt å holde seg våken på.", "no_NO");
+	private Product whiteCupEn = new Product(1, "White Coffee Cup", 6.72, "whitecup.jpg", "This is the ultimate cup for application developers who sit late nights and need something to stay awake on.", "en_US");
+	private Product whiteCupEs = new Product(1, "White Coffee Cup", 6.72, "whitecup.jpg", "Este es el cáliz definitiva para los desarrolladores de aplicaciones que se sientan horas de la noche y necesitan algo para mantenerse despierto en.", "es_ES");
 	
-	private Product blackCupNo = new Product(2, "Black Coffee Cup", 38.00, "blackcup.jpg", "Dette er en kopp for de som liker den svarte fargen. Koppen er spesielt egnet til kaffe, te og melk, men kan også brukes til andre drikker.", "no_NO");
-	private Product blackCupEn = new Product(2, "Black Coffee Cup", 38.00, "blackcup.jpg", "This is a cup for those who like the black color. The cup is especially suited to coffee, tea and milk, but can also be used for other beverages.", "en_US");
-	private Product blackCupEs = new Product(2, "Black Coffee Cup", 38.00, "blackcup.jpg", "Esta es una copa para aquellos que les gusta el color negro. La copa es el indicado para el café, el té y la leche, pero también se puede utilizar para otras bebidas.", "es_ES");
+	private Product blackCupNo = new Product(2, "Black Coffee Cup", 4.91, "blackcup.jpg", "Dette er en kopp for de som liker den svarte fargen. Koppen er spesielt egnet til kaffe, te og melk, men kan også brukes til andre drikker.", "no_NO");
+	private Product blackCupEn = new Product(2, "Black Coffee Cup", 4.91, "blackcup.jpg", "This is a cup for those who like the black color. The cup is especially suited to coffee, tea and milk, but can also be used for other beverages.", "en_US");
+	private Product blackCupEs = new Product(2, "Black Coffee Cup", 4.91, "blackcup.jpg", "Esta es una copa para aquellos que les gusta el color negro. La copa es el indicado para el café, el té y la leche, pero también se puede utilizar para otras bebidas.", "es_ES");
 	
 	private Product prodList[] = {whiteCupNo, whiteCupEn, whiteCupEs, blackCupNo, blackCupEn, blackCupEs};
 	
