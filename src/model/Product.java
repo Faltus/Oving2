@@ -1,5 +1,5 @@
 package model;
-
+//Endring!
 public class Product {
 	private int number;
 	private String name;
